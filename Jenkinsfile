@@ -7,6 +7,8 @@ pipeline {
 
     environment {
         VERACODE_APP_NAME = 'Play-webgoat'      // App Name in the Veracode Platform
+        SBT_HOME="${tool 'mySbt'}"
+        PATH="${env.SBT_HOME}/bin:${env.PATH}"
     }
 
     // this is optional on Linux, if jenkins does not have access to your locally installed docker
