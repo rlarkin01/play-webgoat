@@ -40,7 +40,9 @@ pipeline {
         stage ('build') {
             steps {
                 echo 'Building..'
-                sh "sbt 'set scalacOptions += "-g:vars"' compile package"
+                sh '''
+                    sbt 'set scalacOptions += "-g:vars"' compile package
+                '''
             }
         }
 
